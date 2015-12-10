@@ -1,0 +1,22 @@
+{
+  "name": "jquery-treetable",
+  "authors": [
+    "Martins Balodis <martins256@gmail.com>"
+  ],
+  "description": "Tree table",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "jquery": "~2.1.4"
+  }
+}

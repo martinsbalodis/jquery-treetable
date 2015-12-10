@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>D3 graph table</title>
+
+	<link rel="stylesheet" type="text/css"
+		  href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="jquery-treetable.css">
+	<script src="bower_components/d3/d3.min.js"></script>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="jquery-treetable.js"></script>
+	<script>
+		$(function() {
+			$("table").treetable();
+		});
+	</script>
+</head>
+<body>
+<div class="container">
+	<h1>Table example</h1>
+	<table class="table table-bordered tt-table">
+		<thead>
+		<tr>
+			<th>#</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th style="width:400px">Graph here</th>
+			<th>Username</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th scope="row">1</th>
+			<td>Mark</td>
+			<td>Otto</td>
+			<td>
+				<div class="tt" data-tt-id="root">Mark</div>
+			</td>
+			<td>@mdo</td>
+		</tr>
+		<tr>
+			<th scope="row">2</th>
+			<td>Jacob</td>
+			<td>Thornton</td>
+			<td>
+				<div class="tt" data-tt-id="jacob" data-tt-parent="root">Jacob</div>
+			</td>
+			<td>@fat</td>
+		</tr>
+		<tr>
+			<th scope="row">3</th>
+			<td>Larry</td>
+			<td>the Bird</td>
+			<td>
+				<div class="tt" data-tt-id="larry" data-tt-parent="root">Larry</div>
+			</td>
+			<td>@twitter</td>
+		</tr>
+		<tr>
+			<th scope="row">4</th>
+			<td>Tony</td>
+			<td>the Bird</td>
+			<td>
+				<div class="tt" data-tt-id="tony" data-tt-parent="larry">Tony</div>
+			</td>
+			<td>@twitter</td>
+		</tr>
+		<tr>
+			<th scope="row">1</th>
+			<td>Mark</td>
+			<td>Otto</td>
+			<td>
+				<div class="tt" data-tt-id="asd">Mark</div>
+			</td>
+			<td>@mdo</td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+
+</body>
+</html>

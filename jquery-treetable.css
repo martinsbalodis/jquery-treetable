@@ -1,0 +1,33 @@
+.tt-table div.tt {
+	display:inline-block;
+	position:relative;
+}
+
+.tt-table div.tt div.content {
+	border:1px gray solid;
+	border-radius: 2px;
+	z-index: 10;
+	padding:0 4px 0 5px;
+	position:relative;
+	background-color: #dbffbe;
+}
+
+.tt-table div.tt div.tail {
+	border:2px gray solid;
+	border-right: 0;
+	border-top: 0;
+	position:absolute;
+	border-radius: 2px;
+	bottom: 11px;
+	left: -10px;
+	z-index: 0;
+}
+
+.tt-table div.tt-parent div.content {
+	cursor:pointer;
+	background-color: lightgray;
+}
+
+.tt-table tr.tt-hide {
+	display:none;
+}
