@@ -12,6 +12,9 @@ jQuery.fn.extend({
 			var $el = $(el);
 			var id = $el.data('tt-id');
 			var parent = $el.data('tt-parent');
+			if(parent === '') {
+				parent = undefined;
+			}
 
 			var item = {
 				id: id,
