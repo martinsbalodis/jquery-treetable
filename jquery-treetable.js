@@ -1,7 +1,7 @@
 jQuery.fn.extend({
 	treetable: function() {
 		var $table = $(this);
-		$table.addClass(".tt-table");
+		$table.addClass("tt-table");
 
 		var $items = $table.find("div.tt");
 		var index = {};
