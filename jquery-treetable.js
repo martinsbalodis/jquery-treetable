@@ -65,29 +65,37 @@ jQuery.fn.extend({
 			}
 		});
 
-		// draw lines
-		items.forEach(function (item) {
 
-			if (item.parent === undefined) {
-				return;
-			}
+        function drawLines()
+        {
+            // draw lines
+            items.forEach(function (item) {
 
-			var childPos = item.el.position();
-			var parent = item.parent;
+                if (item.parent === undefined) {
+                    return;
+                }
 
-			var parentPos = parent.el.position();
-			var height = childPos.top - parentPos.top;
-			var width = item.left - parent.left;
-			var left = parent.left - item.left + (parent.width / 2);
+                var childPos = item.el.position();
+                var parent = item.parent;
 
-			var $tail = $('<div class="tail"></div>').css({
-				height: height,
-				width: width,
-				left: left
-			});
+                var parentPos = parent.el.position();
+                var height = childPos.top - parentPos.top;
+                var width = item.left - parent.left;
+                var left = parent.left - item.left + (parent.width / 2);
 
-			item.el.prepend($tail);
-		});
+                item.el.children('div.tail').first().remove();
+
+                var $tail = $('<div class="tail"></div>').css({
+                    height: height,
+                    width: width,
+                    left: left
+                });
+
+                item.el.prepend($tail);
+            });
+        }
+        drawLines();
+
 
 		// handle click event
 		$table.on("click", "div.tt div.content", function (e) {
@@ -114,6 +122,7 @@ jQuery.fn.extend({
 				}
 
 				hide(id);
+				drawLines();
 			}
 			else {
 				// show direct children
@@ -121,6 +130,7 @@ jQuery.fn.extend({
 				item.children.forEach(function (child) {
 					$(child.el).closest("tr").removeClass("tt-hide");
 				});
+				drawLines();
 			}
 		});
 
