@@ -1,6 +1,17 @@
 jQuery.fn.extend({
 	treetable: function() {
-		var $table = $(this);
+		
+	//collection of all the tables selected
+	var $tables = $(this);
+
+	//loop through each table
+	for (i = 0; i < $tables.length; i++) {
+
+	//don't paint the tt if the table has already been painted or it's invisible
+	if (!$table.hasClass("tt-table") && $table.is(":visible")) {
+
+		var $table = $($tables[i]);	
+
 		$table.addClass("tt-table");
 
 		var $items = $table.find("div.tt");
@@ -133,8 +144,10 @@ jQuery.fn.extend({
 				drawLines();
 			}
 		});
+		};
+	}
 
-		// initially hide all children
+		// initially hide all children - we should provide an option to set behavior here
 		items.forEach(function (item) {
 
 			if (item.parent === undefined && item.children.length > 0) {
