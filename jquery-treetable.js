@@ -7,11 +7,10 @@ jQuery.fn.extend({
 	//loop through each table
 	for (i = 0; i < $tables.length; i++) {
 
+	var $table = $($tables[i]);	
+
 	//don't paint the tt if the table has already been painted or it's invisible
 	if (!$table.hasClass("tt-table") && $table.is(":visible")) {
-
-		var $table = $($tables[i]);	
-
 		$table.addClass("tt-table");
 
 		var $items = $table.find("div.tt");
